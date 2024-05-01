@@ -3,5 +3,5 @@ $(document).ready(function () {
     setTimeout(function(){
         $('.loading').addClass('hidden');
         $('.content').removeClass('hidden');
-    }, 5000);
+    }, 2000);
 })
