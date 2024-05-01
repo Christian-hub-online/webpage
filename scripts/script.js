@@ -14,4 +14,4 @@ $(document).ready(setTimeout(function () {
     $('.loader').addClass('hidden');
     $('header').removeClass('hidden');
     $('main').removeClass('hidden');
-}, 5000))
+}, 2000))
