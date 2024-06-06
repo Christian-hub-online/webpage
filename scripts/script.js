@@ -63,7 +63,7 @@ const updateUI = () => {
     } else if (checkout.length === 2) {
         counter.html(`
         <tr><td class="col-xs-5"><h3>Item</h3></td> <td class="col-sm-1"><h3>Price</h3></td></tr>
-        <tr id="counter-row-one"><td> ${checkout[0][0]} </td> <td> ${checkout[0][1]} </td></tr>
+        <tr name="${checkout[0][0]}" id="counter-row-one"><td> ${checkout[0][0]} </td> <td> ${checkout[0][1]} </td></tr>
         <tr id="total"><td><strong>Total</strong></td> <td><strong>KES</strong> ${total}</td></tr>
         `);
     } else {
@@ -72,13 +72,13 @@ const updateUI = () => {
         `)
         for(let i = checkout.length - 1; i > 0 ; i--) {
             counter.append(`
-            <tr>
+            <tr name="${checkout[i][0]}" value="${checkout[i][1]}">
                 <td> ${checkout[i][0]} </td> <td> ${checkout[i][1]} </td>
             </tr>
             `)
         }
         counter.append(`
-        <tr id="total"><td><strong>Total</strong></td> <td><strong>KES</strong> ${total}</td></tr>
+        <tr name="Total" value="${total}" id="total"><td><strong>Total</strong></td> <td><strong>KES</strong> ${total}</td></tr>
         `)
     }
 }
