@@ -36,6 +36,8 @@ const checkboxes = [
 const counter = $('#counter');
 const counterRow1 =  $('#counter-row-one');
 const checkoutTotal = $('#total');  
+const order = $('#order');
+
 
 
 const addItem = () => {
@@ -81,6 +83,7 @@ const updateUI = () => {
         <tr name="Total" value="${total}" id="total"><td><strong>Total</strong></td> <td><strong>KES</strong> ${total}</td></tr>
         `)
     }
+    order.val(checkout)
 }
 const removeItem = (ariaLabel) => {
     const index = checkout.findIndex(item => item[0] === ariaLabel);
