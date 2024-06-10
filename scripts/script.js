@@ -68,6 +68,7 @@ const orderValueGen = () => {
 const updateUI = () => {
     orderValueGen();
     let total = checkout.reduce((total, item) => total + parseInt(item[1]), 0);
+    total = `${total === 0? total: Math.floor(Number(total) / 1000) + `,${Number(total) % 1000 === 0? "000" : Number(total) % 1000}`}`;
     if (checkout.length === 1) {
         counter.html(`
             <tr><td class="col-xs-5"><h3>Item</h3></td> <td class="col-sm-1"><h3>Price</h3></td></tr>
@@ -75,9 +76,10 @@ const updateUI = () => {
             <tr id="total"><td><strong>Total</strong></td> <td><strong>KES</strong> ${total}</td></tr>
         `);
     } else if (checkout.length === 2) {
+        const checkout1CashDisplay = `${checkout[1][1] === 0? checkout[1][1]: Math.floor(Number(checkout[1][1]) / 1000) + `,${Number(checkout[1][1]) % 1000 === 0 && Number(checkout[1][1]) > 0? "000" : Number(checkout[1][1]) % 1000}`}`;
         counter.html(`
         <tr><td class="col-xs-5"><h3>Item</h3></td> <td class="col-sm-1"><h3>Price</h3></td></tr>
-        <tr id="counter-row-one"><td> ${checkout[1][0]} </td> <td> ${checkout[1][1]} </td></tr>
+        <tr id="counter-row-one"><td> ${checkout[1][0]} </td> <td> ${checkout1CashDisplay} </td></tr>
         <tr id="total"><td><strong>Total</strong></td> <td><strong>KES</strong> ${total}</td></tr>
         `);
     } else {
@@ -85,11 +87,21 @@ const updateUI = () => {
         <tr><td class="col-xs-5"><h3>Item</h3></td> <td class="col-sm-1"><h3>Price</h3></td></tr>
         `)
         for(let i = checkout.length - 1; i > 0 ; i--) {
-            counter.append(`
-            <tr>
-                <td> ${checkout[i][0]} </td> <td> ${checkout[i][1]} </td>
-            </tr>
-            `)
+            const checkoutICashDisplay = `${Number(checkout[i][1]) === 0? checkout[i][1] : Math.floor(Number(checkout[i][1]) / 1000)},${Number(checkout[i][1]) % 1000 === 0? "000" : Number(checkout[i][1]) % 1000}`;
+            if (checkoutICashDisplay == "0,000") {
+                counter.append(`
+                <tr>
+                    <td> ${checkout[i][0]} </td> <td> N/A </td>
+                </tr>
+                `)
+            } else {
+                counter.append(`
+                <tr>
+                    <td> ${checkout[i][0]} </td> <td> ${checkoutICashDisplay} </td>
+                </tr>
+                `)
+            }
+            
         }
         counter.append(`
         <tr name="Total" id="total"><td><strong>Total</strong></td> <td><strong>KES</strong> ${total}</td></tr>
