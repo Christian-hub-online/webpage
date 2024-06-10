@@ -63,7 +63,6 @@ const orderValueGen = () => {
         }
     }
     orderValue.splice(orderValue.length - 1, 1);
-    console.log(orderValue);
 };
 
 const updateUI = () => {
@@ -115,6 +114,5 @@ checkboxes.forEach((box) => {
         }
     })
 });
-console.log(order)
 $("input:checkbox").on('click', updateUI);
 updateUI();
