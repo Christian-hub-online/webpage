@@ -53,8 +53,21 @@ const addItem = () => {
     });
 
 };
+const {ariaLabel, value} = checkout;
+let orderValue = [];
+const orderValueGen = () => {
+    orderValue = [];
+    for (let i = checkout.length - 1; i >= 0; i--) {
+        if (!orderValue.some(item => item[0] === checkout[i][0])) {
+            orderValue.push(checkout[i][0]);
+        }
+    }
+    orderValue.splice(orderValue.length - 1, 1);
+    console.log(orderValue);
+};
 
 const updateUI = () => {
+    orderValueGen();
     let total = checkout.reduce((total, item) => total + parseInt(item[1]), 0);
     if (checkout.length === 1) {
         counter.html(`
@@ -83,7 +96,7 @@ const updateUI = () => {
         <tr name="Total" id="total"><td><strong>Total</strong></td> <td><strong>KES</strong> ${total}</td></tr>
         `)
     }
-    order.val(checkout)
+   order.val(orderValue);
 }
 const removeItem = (ariaLabel) => {
     const index = checkout.findIndex(item => item[0] === ariaLabel);
@@ -93,7 +106,8 @@ const removeItem = (ariaLabel) => {
 };
 checkboxes.forEach((box) => {
     box.on('click', () => {
-        const ariaLabel = box.attr('aria-label');
+        const ariaLabel = box.attr('aria-label'); 
+        orderValueGen();
         if (box.is(':checked')) {
             addItem();
         } else {
@@ -101,5 +115,6 @@ checkboxes.forEach((box) => {
         }
     })
 });
+console.log(order)
 $("input:checkbox").on('click', updateUI);
 updateUI();
