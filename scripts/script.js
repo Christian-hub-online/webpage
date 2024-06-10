@@ -99,7 +99,6 @@ checkboxes.forEach((box) => {
         } else {
             removeItem(ariaLabel);
         }
-        console.log(checkout);
     })
 });
 $("input:checkbox").on('click', updateUI);
