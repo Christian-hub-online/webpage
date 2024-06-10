@@ -94,7 +94,7 @@ const updateUI = () => {
                     <td> ${checkout[i][0]} </td> <td> N/A </td>
                 </tr>
                 `)
-            } else if (checkoutICashDisplay == "0,500"){
+            } else if (checkout[i][1] < 1000){
                 counter.append(`
                 <tr>
                     <td> ${checkout[i][0]} </td> <td> ${checkout[i][1]} </td>
