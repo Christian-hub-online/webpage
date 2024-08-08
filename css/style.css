@@ -880,4 +880,6 @@ table, td {
 	-webkit-animation-delay: 1.2s; 
 }
 
-
+a {
+	text-decoration: none;
+}

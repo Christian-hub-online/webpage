@@ -1,4 +1,4 @@
-const appDataUrl = "/webpage/product-system/product-details.json"; // URL to the JSON file
+const appDataUrl = "https://neontek.co.ke/product-system/product-details.json"; // URL to the JSON file
 const container = $('#container');
 
 // Fetch the JSON data from the URL
