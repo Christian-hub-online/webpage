@@ -8,9 +8,10 @@ $.getJSON(appDataUrl, function(data) {
     dataArray.forEach(app => {
         container.append(`
             <div class="Portfolio-box webdesign">
-                <a href="${app.imgsrc}"><img width="250" height="200" alt="${app.name}"></a>
+                <a href="${app.downloadlink}"><img src="${app.imgsrc}" width="250" height="250" alt="${app.name}"></a>
                 <h3>${app.name}</h3>
                 <p>${app.description}</p>
+                <p>${app.version}</p>
             </div>
         `);
     });

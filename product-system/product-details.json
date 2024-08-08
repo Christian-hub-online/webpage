@@ -4,6 +4,7 @@
         "version" : "1.0.0",
         "description" : "Keep you quiet time quiet",
         "author" : "Wesley Weiss",
-        "imgsrc" : "https://neontek.co.ke/releases/img/Magistra.png"
+        "imgsrc" : "https://neontek.co.ke/releases/img/Magistra.png",
+        "downloadlink" : "https://neontek.co.ke/assets/Magistra.apk"
     }
 }
