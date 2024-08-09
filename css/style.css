@@ -42,7 +42,7 @@
 
 img{ max-width:100%;}
 
-a, a:hover, a:active{ outline:0px !important}
+a, a:hover, a:active{ outline:0px !important; text-decoration:none;}
 
 @font-face {
   font-family: 'FontAwesome';
@@ -279,7 +279,12 @@ color: #fff;
 .main-section.alabaster{
 	background:#fafafa;
 }
-
+.service-image {
+	float: right;
+}
+.service-image img {
+	border-radius: 10px;
+}
 /* Featured Work
 ---------------------------------*/
 .featured-work{
@@ -880,6 +885,6 @@ table, td {
 	-webkit-animation-delay: 1.2s; 
 }
 
-a {
+a:hover {
 	text-decoration: none;
 }
