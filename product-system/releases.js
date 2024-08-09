@@ -15,16 +15,9 @@ const loadData = (retries = 5, delay = 2000) => {
             `);
         });
     }).fail(function() {
-        if (retries > 0) {
-            console.warn(`Failed to load data. Retrying in ${delay / 1000} seconds... (${retries} retries left)`);
-            setTimeout(() => loadData(retries - 1, delay), delay);
-        } else {
-            console.error("Failed to load data after multiple attempts.");
-        }
+       loadData();
     });
 }
 
 
-for (let i = 0; i < 11; 1++) {
-    loadData();
-}
+
