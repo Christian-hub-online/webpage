@@ -1,10 +1,9 @@
-const appDataUrl = "https://neontek.co.ke/product-system/product-details.json"; // URL to the JSON file
+const appDataUrl = "https://neontek.co.ke/product-system/product-details.json";
 const container = $('#container');
 
-function loadData(retries = 5, delay = 2000) {
+const loadData = (retries = 5, delay = 2000) => {
     $.getJSON(appDataUrl, function(data) {
         const dataArray = Array.from(Object.values(data));
-        console.log(dataArray);
         dataArray.forEach(app => {
             container.append(`
                 <div class="Portfolio-box webdesign">
@@ -26,4 +25,6 @@ function loadData(retries = 5, delay = 2000) {
 }
 
 
-loadData();
+for (let i = 0; i < 11; 1++) {
+    loadData();
+}
