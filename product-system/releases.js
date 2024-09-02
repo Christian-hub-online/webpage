@@ -5,7 +5,6 @@ const loadData = () => {
     $.getJSON(appDataUrl)
         .done(function(data) {
             const dataArray = Array.from(Object.values(data));
-            console.log(dataArray);
             dataArray.forEach(app => {
                 container.append(`
                     <div class="Portfolio-box webdesign">
