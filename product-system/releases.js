@@ -22,6 +22,5 @@ const loadData = () => {
         });
 }
 
-setTimeout(()=>{
-    loadData();
-}, 2000)
+// Delay loading data by 2 seconds
+setTimeout(loadData, 2000);
