@@ -23,4 +23,6 @@ const loadData = () => {
         });
 }
 
-loadData();
+setTimeout(()=>{
+    loadData();
+}, 2000)
