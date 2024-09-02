@@ -1,7 +1,7 @@
 const appDataUrl = "https://neontek.co.ke/product-system/product-details.json";
 const container = $('#container');
 
-const loadData= () => {
+const loadData= (async) => {
     $.getJSON(appDataUrl, function(data) {
         const dataArray = Array.from(Object.values(data));
         console.log(dataArray);
