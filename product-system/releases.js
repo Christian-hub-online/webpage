@@ -18,9 +18,8 @@ const loadData = () => {
         })
         .fail(function(jqXHR, textStatus, errorThrown) {
             console.error("Failed to load data: ", textStatus, errorThrown);
-            // Optionally, handle the error gracefully here
+            loadData();
         });
 }
 
-// Delay loading data by 2 seconds
-setTimeout(loadData, 2000);
+loadData();
