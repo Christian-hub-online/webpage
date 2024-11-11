@@ -10,3 +10,4 @@ const data = (async => {
         console.error('Error fetching blog posts:', error);
     }
 })
+console.log(data)
