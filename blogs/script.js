@@ -11,4 +11,4 @@ const data = (async () => {
     }
 })();
 
-data.then(result => console.log(result));
+console.log(data.AI_Misconceptions)
