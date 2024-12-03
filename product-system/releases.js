@@ -20,6 +20,7 @@ const loadData = () => {
             console.error("Failed to load data: ", textStatus, errorThrown);
             loadData();
         });
+    loadData();
 }
 
 loadData();
