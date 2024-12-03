@@ -20,6 +20,10 @@ const checkout = [["-","0"]];
 const checkboxes = [
     $('#full-cv-package'),
     $('#cv-update'),
+    $('birthday-cards'),
+    $('#success-cards'),
+    $('#wedding-cards'),
+    $('#thank-you-cards'),
     $('#ecommerce'),
     $('#wp-business'),
     $('#wp-individual'),
