@@ -18,8 +18,8 @@ $(document).ready(setTimeout(function () {
 // Checkout functionality;
 const checkout = [["-","0"]];
 const checkboxes = [
-    $('#full-branding'),
-    $('#logo-design'),
+    $('#full-cv-package'),
+    $('#cv-update'),
     $('#ecommerce'),
     $('#wp-business'),
     $('#wp-individual'),

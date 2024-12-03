@@ -749,9 +749,11 @@ img {
   background: #0a66c2;
 }
 .instagram a:hover {
+  transition: all 0.3s ease-in-out;
   background: linear-gradient(45deg, #f58529, #dd2a7b, #833ab4);
 }
 .tiktok a:hover {
+  transition: all 0.3s ease-in-out;
   background: linear-gradient(90deg, #ff0050, #000, #00f2ea);
 }
 
