@@ -18,9 +18,9 @@ const loadData = () => {
         })
         .fail(function(jqXHR, textStatus, errorThrown) {
             console.error("Failed to load data: ", textStatus, errorThrown);
-            loadData();
         });
-    loadData();
 }
 
+// Call loadData once outside the function
 loadData();
+
