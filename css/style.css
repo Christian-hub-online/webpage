@@ -231,17 +231,27 @@ p {
 ---------------------------------*/
 .main-nav-outer {
   padding: 0px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 3px solid #dddddd;
   box-shadow: 0 4px 5px -3px #ececec;
   position: relative;
   background: #fff;
 }
+
 .main-nav {
   text-align: center;
-  margin: 10px 0 0px;
+  height: 0; /* Hidden initially */
+  overflow: hidden; /* Ensure content is hidden */
   padding: 0;
   list-style: none;
+  transition: height 0.3s ease, padding 0.3s ease; /* Smooth transition */
 }
+
+.main-nav-outer:hover .main-nav {
+  height: fit-content; /* Expand when hovering over .main-nav-outer */
+  padding: 10px 0; /* Add padding when expanded */
+  margin: 10px 0 0px;
+}
+
 .main-nav li {
   display: inline;
   margin: 0 1px;
