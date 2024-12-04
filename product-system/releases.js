@@ -23,6 +23,8 @@ const loadData = () => {
 }
 
 // Call loadData once outside the function
-loadData();
+setTimeout(()=> {
+    loadData();
+}, 3000) 
 
 
