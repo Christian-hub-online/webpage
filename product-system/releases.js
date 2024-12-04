@@ -1,17 +1,17 @@
 const appDataUrl = "https://neontek.co.ke/product-system/product-details.json";
 const container = document.getElementById('container');
 
-
 const loadData = async () => {
     try {
         const response = await fetch(appDataUrl);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        const data = await response.json();
-        console.log(data);
-
-        const dataArray = Array.from(Object.values(data));
+        
+        const data = await response.json(); // Properly await the JSON conversion
+        console.log("This is data:", data);
+        
+        const dataArray = Object.values(data); // This gets an array of app objects
         dataArray.forEach(app => {
             const portfolioBox = document.createElement('div');
             portfolioBox.classList.add('Portfolio-box', 'webdesign');
@@ -28,9 +28,6 @@ const loadData = async () => {
     }
 };
 
-// Call loadData after a 3-second delay
-setTimeout(() => {
-    loadData();
-}, 3000);
 
+loadData();
 
