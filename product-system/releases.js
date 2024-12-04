@@ -15,6 +15,7 @@ const container = document.getElementById('container');
 const loadData = () => {
     // Correcting the reference to appData
     const dataArray = Object.values(appData);
+    console.log(dataArray)
     dataArray.forEach(app => {
         const portfolioBox = document.createElement('div');
         portfolioBox.classList.add('Portfolio-box', 'webdesign');
