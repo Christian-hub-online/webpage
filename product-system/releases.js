@@ -13,19 +13,20 @@ const appData = {
 const container = document.getElementById('container');
 
 const loadData = () => {
-        const dataArray = Object.values(data);
-        dataArray.forEach(app => {
-            const portfolioBox = document.createElement('div');
-            portfolioBox.classList.add('Portfolio-box', 'webdesign');
-            portfolioBox.innerHTML = `
-                <a href="${app.downloadlink}"><img src="${app.imgsrc}" width="250" height="250" alt="${app.name}"></a>
-                <h3>${app.name}</h3>
-                <p>${app.description}</p>
-                <p>${app.version}</p>
-            `;
-            container.appendChild(portfolioBox);
-        });
-    };
+    // Correcting the reference to appData
+    const dataArray = Object.values(appData);
+    dataArray.forEach(app => {
+        const portfolioBox = document.createElement('div');
+        portfolioBox.classList.add('Portfolio-box', 'webdesign');
+        portfolioBox.innerHTML = `
+            <a href="${app.downloadlink}"><img src="${app.imgsrc}" width="250" height="250" alt="${app.name}"></a>
+            <h3>${app.name}</h3>
+            <p>${app.description}</p>
+            <p>${app.version}</p>
+        `;
+        container.appendChild(portfolioBox);
+    });
+};
 
 // Ensure DOM is loaded before trying to append data
 document.addEventListener('DOMContentLoaded', () => {
