@@ -1,26 +1,34 @@
 const appDataUrl = "https://neontek.co.ke/product-system/product-details.json";
-const container = $('#container');
+const container = document.getElementById('container');
 
 const loadData = () => {
-    $.getJSON(appDataUrl)
-        .done(function(data) {
+    fetch(appDataUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
             const dataArray = Array.from(Object.values(data));
             dataArray.forEach(app => {
-                container.append(`
-                    <div class="Portfolio-box webdesign">
-                        <a href="${app.downloadlink}"><img src="${app.imgsrc}" width="250" height="250" alt="${app.name}"></a>
-                        <h3>${app.name}</h3>
-                        <p>${app.description}</p>
-                        <p>${app.version}</p>
-                    </div>
-                `);
+                const portfolioBox = document.createElement('div');
+                portfolioBox.classList.add('Portfolio-box', 'webdesign');
+                portfolioBox.innerHTML = `
+                    <a href="${app.downloadlink}"><img src="${app.imgsrc}" width="250" height="250" alt="${app.name}"></a>
+                    <h3>${app.name}</h3>
+                    <p>${app.description}</p>
+                    <p>${app.version}</p>
+                `;
+                container.appendChild(portfolioBox);
             });
         })
-        .fail(function(jqXHR, textStatus, errorThrown) {
-            console.error("Failed to load data: ", textStatus, errorThrown);
+        .catch(error => {
+            console.error("Failed to load data: ", error);
         });
 }
 
 // Call loadData once outside the function
 loadData();
+
 
