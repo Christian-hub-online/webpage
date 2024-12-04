@@ -4,6 +4,7 @@ const container = document.getElementById('container');
 const loadData = () => {
     fetch(appDataUrl)
         .then(data => {
+            console.log(data)
             const dataArray = Array.from(Object.values(data));
             dataArray.forEach(app => {
                 const portfolioBox = document.createElement('div');
