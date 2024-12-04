@@ -35,7 +35,7 @@ const loadData = async (retries = 3) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (container) {
-        loadData();
+        setTimeout(() => loadData(), 3000);
     } else {
         console.error("Container element not found");
     }
