@@ -3,12 +3,6 @@ const container = document.getElementById('container');
 
 const loadData = () => {
     fetch(appDataUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
         .then(data => {
             const dataArray = Array.from(Object.values(data));
             dataArray.forEach(app => {
