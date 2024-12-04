@@ -1,17 +1,17 @@
 const appDataUrl = "https://neontek.co.ke/product-system/product-details.json";
 const container = document.getElementById('container');
 
-const loadData = async () => {
+const loadData = async (retries = 3) => {
     try {
         const response = await fetch(appDataUrl);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
-        const data = await response.json(); // Properly await the JSON conversion
-        console.log("This is data:", data);
-        
-        const dataArray = Object.values(data); // This gets an array of app objects
+
+        const data = await response.json();
+        console.log(data);
+
+        const dataArray = Object.values(data);
         dataArray.forEach(app => {
             const portfolioBox = document.createElement('div');
             portfolioBox.classList.add('Portfolio-box', 'webdesign');
@@ -24,10 +24,13 @@ const loadData = async () => {
             container.appendChild(portfolioBox);
         });
     } catch (error) {
-        console.error("Failed to load data: ", error);
+        if (retries > 0) {
+            console.warn(`Retrying... attempts left: ${retries}`);
+            setTimeout(() => loadData(retries - 1), 1000);
+        } else {
+            console.error("Failed to load data after retries: ", error);
+        }
     }
 };
 
-
-loadData();
-
+setTimeout(() => loadData(), 3000);
