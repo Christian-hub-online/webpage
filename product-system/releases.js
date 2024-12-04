@@ -28,7 +28,4 @@ const loadData = () => {
     });
 };
 
-// Ensure DOM is loaded before trying to append data
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => loadData(), 3000);
-});
+loadData();
