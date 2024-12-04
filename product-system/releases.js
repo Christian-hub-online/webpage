@@ -1,14 +1,29 @@
-const appDataUrl = "https://neontek.co.ke/product-system/product-details.json";
+const appData = {
+    "app-0": {
+        "name": "Magistra",
+        "version": "Version 1.0.0",
+        "description": "Keep your quiet time quiet",
+        "author": "Wesley Weiss",
+        "imgsrc": "https://neontek.co.ke/product-system/img/Magistra.png",
+        "downloadlink": "https://neontek.co.ke/assets/Magistra.apk"
+    }
+};
+
+// Simulate a container element in the DOM
 const container = document.getElementById('container');
+
+// Mock function to simulate asynchronous data fetch with a delay
+const fetchAppData = async () => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(appData); // Resolve the promise with appData after 1 second
+        }, 1000);
+    });
+};
 
 const loadData = async (retries = 3) => {
     try {
-        const response = await fetch(appDataUrl);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
+        const data = await fetchAppData(); // Simulate fetching the appData
         console.log(data);
 
         const dataArray = Object.values(data);
@@ -33,6 +48,7 @@ const loadData = async (retries = 3) => {
     }
 };
 
+// Ensure DOM is loaded before trying to append data
 document.addEventListener('DOMContentLoaded', () => {
     if (container) {
         setTimeout(() => loadData(), 3000);
@@ -40,4 +56,3 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error("Container element not found");
     }
 });
-
