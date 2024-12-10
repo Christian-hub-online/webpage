@@ -9,23 +9,48 @@
 
 <url>
   <loc>https://neontek.co.ke/</loc>
-  <lastmod>2024-06-06T13:33:41+00:00</lastmod>
+  <lastmod>2024-12-04T15:40:38+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
+  <loc>https://neontek.co.ke/releases/</loc>
+  <lastmod>2024-12-04T15:40:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://neontek.co.ke/techhub/</loc>
-  <lastmod>2024-06-06T13:33:41+00:00</lastmod>
+  <lastmod>2024-12-04T15:40:39+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://neontek.co.ke/services/</loc>
-  <lastmod>2024-06-06T13:33:41+00:00</lastmod>
+  <lastmod>2024-12-04T15:40:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://neontek.co.ke/blogs/</loc>
+  <lastmod>2024-12-04T15:40:39+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://neontek.co.ke/learning/</loc>
-  <lastmod>2024-06-06T13:33:41+00:00</lastmod>
+  <lastmod>2024-12-04T15:40:39+00:00</lastmod>
   <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://neontek.co.ke/index.html</loc>
+  <lastmod>2024-12-04T15:40:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://neontek.co.ke/blogs/post/five-ai-misconceptions/</loc>
+  <lastmod>2024-12-04T15:40:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://neontek.co.ke/assets/HTML%20Notes.pdf</loc>
+  <lastmod>2024-12-04T15:40:39+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 
 
